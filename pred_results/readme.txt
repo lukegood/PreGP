@@ -1,1 +1,1 @@
-This fold is used to save predictions.
+This folder is used to save predictions.

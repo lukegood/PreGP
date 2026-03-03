@@ -1,1 +1,1 @@
-This fold is used to save run_log.
+This folder is used to save run_log.

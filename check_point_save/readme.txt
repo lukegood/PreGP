@@ -1,1 +1,1 @@
-This fold is used to save checkpoit.
+This folder is used to save checkpoit.

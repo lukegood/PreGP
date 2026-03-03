@@ -1,1 +1,1 @@
-This fold is used to save pretrained models.
+This folder is used to save pretrained models.
