@@ -124,13 +124,13 @@ def create_logger(log_file):
 def create_arg_parser():
     parser = argparse.ArgumentParser(description="Bert-Gene")
 
-    parser.add_argument('--geno_path', type=str, default='D:\MyFiles\Research\Resource\Data\data6210\data6210-1_ID_kmer_all_42938.csv', help='path of geno file')
-    parser.add_argument('--cvf_path', type=str, default='D:\MyFiles\Research\Resource\Data\data6210\CVF_new_MG_1541.csv', help='path of cvf file')
-    parser.add_argument('--phe_path', type=str, default='D:/MyFiles/Research/Resource/Data/data6210/PH_phe.csv', help='path of phe file')
-    parser.add_argument('--env_name', type=str, default='Jilin_PH', help='name of phenotype')
+    parser.add_argument('--geno_path', type=str, default='./data6210-1_ID_kmer_all_42938.csv', help='path of geno file')
+    parser.add_argument('--cvf_path', type=str, default='./CVF_new_MG_1541.csv', help='path of cvf file')
+    parser.add_argument('--phe_path', type=str, default='./PH_phe.csv', help='path of phe file')
+    parser.add_argument('--env_name', type=str, default='EW', help='name of phenotype')
     parser.add_argument('--device', default='cuda', help='device id (i.e. 0 or 0,1 or cpu)')
     parser.add_argument('--big_batch', type=int, default=1, help='batchsize')
-    parser.add_argument('--cut_length', type=int, default=1, help='batchsize')
+    parser.add_argument('--cut_length', type=int, default=1288, help='batchsize')
     parser.add_argument('--dropout', type=float, default=0.2, help='dropout')
     parser.add_argument('--lr', type=float, default=1e-7, help='learning rate')
     parser.add_argument('--kmer_k', type=int, default=3)

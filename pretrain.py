@@ -120,13 +120,13 @@ def create_logger(log_file):
 def create_arg_parser():
     parser = argparse.ArgumentParser(description="Bert-Gene")
 
-    parser.add_argument('--geno_path', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/6210_210w_comma_new_zhuanzhi_new_353_jianji_cut_2576_3mer.csv", help='path of geno file')
-    parser.add_argument('--geno_path2', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/6210_210w_comma_new_zhuanzhi_new_353_jianji_cut_2576_3mer.csv", help='path of geno file')
-    parser.add_argument('--chr_id_path', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/染色体编号和snp编号/6210_210w_comma_new_jianjizy_zhuanzhi_new_353_chr_split_idx_1288_3mer.csv", help='path of geno file')
-    parser.add_argument('--snp_id_path', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/染色体编号和snp编号/6210_210w_comma_new_jianjizy_zhuanzhi_new_353_po_split_idx_1288_3mer.csv", help='path of geno file')
-    parser.add_argument('--test_geno_path', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/6210_210w_comma_new_zhuanzhi_new_353_jianji_cut_2576_3mer.csv", help='path of geno file')
-    parser.add_argument('--test_chr_id_path', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/染色体编号和snp编号/6210_210w_comma_new_jianjizy_zhuanzhi_new_353_chr_split_idx_1288_3mer.csv", help='path of geno file')
-    parser.add_argument('--test_snp_id_path', type=str, default="/home/pod/shared-nvme/wanglg/standard/data/jianji/6210/染色体编号和snp编号/6210_210w_comma_new_jianjizy_zhuanzhi_new_353_po_split_idx_1288_3mer.csv", help='path of geno file')
+    parser.add_argument('--geno_path', type=str, default="./jianji_cut_2576_3mer.csv", help='path of geno file')
+    parser.add_argument('--geno_path2', type=str, default="./jianji_cut_2576_3mer.csv", help='path of geno file')
+    parser.add_argument('--chr_id_path', type=str, default="./chr_split_idx_1288_3mer.csv", help='path of geno file')
+    parser.add_argument('--snp_id_path', type=str, default="./po_split_idx_1288_3mer.csv", help='path of geno file')
+    parser.add_argument('--test_geno_path', type=str, default="./cut_2576_3mer.csv", help='path of geno file')
+    parser.add_argument('--test_chr_id_path', type=str, default="./split_idx_1288_3mer.csv", help='path of geno file')
+    parser.add_argument('--test_snp_id_path', type=str, default="./split_idx_1288_3mer.csv", help='path of geno file')
     parser.add_argument('--env_name', type=str, default='JL', help='name of phenotype')
     parser.add_argument('--pheno_name', type=str, default='PH', help='name of phenotype')
     parser.add_argument('--device', default='cuda', help='device id (i.e. 0 or 0,1 or cpu)')
@@ -511,13 +511,13 @@ def main():
                 loss = outputs.loss
                 logits = outputs.logits
                 epoch_val_loss += loss.item()
-
+                
+                batch_perplexity, batch_accuracy = cal_perprexity_accuracy(logits, targets)
                 loss_all.append(accelerator.gather_for_metrics(loss))
                 perplexity_all.append(accelerator.gather_for_metrics(batch_perplexity))
                 accuracy_all.append(accelerator.gather_for_metrics(batch_accuracy))
 
                 if batch_idx % args.eval_freq == 0:
-                    batch_perplexity, batch_accuracy = cal_perprexity_accuracy(logits, targets)
                     logger.info(f"Epoch: {epoch + 1:04d} step val batch:{batch_idx:04d} val cost = {loss:.6f} batch_perplexity = {batch_perplexity:.4f} batch_accuracy = {batch_accuracy:.4f}")
 
         losses = [loss.unsqueeze(0) if loss.dim() == 0 else loss for loss in loss_all]
