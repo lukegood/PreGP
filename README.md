@@ -1,7 +1,17 @@
-# PreGP: A Crop Genomic Prediction Method based on a Pretraining-Finetuning Framework
-PreGP is a crop genomic prediction method based on a pretraining-finetuning Framework. Through this tutorial, you can complete model pre-training and fine-tuning to achieve phenotype prediction.
-## Tutorial
-### Create Environment
+<div align="center">
+  <h1>PreGP: A Crop Genomic Prediction Method based on a Pretraining-Finetuning Framework</h1>
+  <p>
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/lukegood/PreGP">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/forks/lukegood/PreGP">
+    <img src="https://img.shields.io/badge/python-≥3.9.20-blue" alt="Python">
+    <img src="https://img.shields.io/badge/transformers-≥4.44.1-blue" alt="Transformers">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/lukegood/PreGP">
+  </p>
+</div>
+PreGP is a crop genomic prediction method based on a pretraining-finetuning Framework. Through this tutorial, you can complete model pre-training and fine-tuning to achieve phenotype prediction. :four_leaf_clover:
+
+## :green_book: Tutorial
+### :hammer: Create Environment
 1. Install Anaconda.
 
 It is recommended to use Anaconda to build the model training environment.
@@ -14,7 +24,7 @@ cd PreGP
 ```
 conda env export -n PreGP > pregp_env.yml
 ```
-### Pretrain Phase
+### :runner: Pretrain Phase
 1. Activate the PreGP environment. 
 ```
 conda activate PreGP
@@ -33,7 +43,9 @@ Here are the meanings of some key parameters, which need to be modified as neede
 | `vocab_path` | Directory containing vocabulary files |
 | `checkpoint_save_path` | Directory to save training checkpoints |
 | `checkpoint_load_file_path` | Directory to load checkpoints from |
-### Finetuning Phase
+
+For more parameter descriptions, please refer to `PARAMETER.md`.
+### :walking: Finetuning Phase
 1. Activate the PreGP environment. 
 ```
 conda activate PreGP
@@ -60,7 +72,7 @@ Here are the meanings of some key parameters, which need to be modified as neede
 
 For more parameter descriptions, please refer to `PARAMETER.md`.
 
-### Download Pretrained Models
+### :raising_hand: Download Pretrained Models
 You can download our pre-trained models trained on large-scale genotype data, and vocabularies at Hugging Face. Access [Hugging Face](https://huggingface.co/integer8/PreGP/tree/main) through the following link.
 ```
 https://huggingface.co/integer8/PreGP/tree/main
