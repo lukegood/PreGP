@@ -44,7 +44,7 @@ Here are the meanings of some key parameters, which need to be modified as neede
 | `checkpoint_save_path` | Directory to save training checkpoints |
 | `checkpoint_load_file_path` | Directory to load checkpoints from |
 
-For more parameter descriptions, please refer to `PARAMETER.md`.
+For more parameter descriptions, please refer to [`PARAMETER.md`](PARAMETER.md).
 ### :walking: Finetuning Phase
 1. Activate the PreGP environment. 
 ```
@@ -70,7 +70,7 @@ Here are the meanings of some key parameters, which need to be modified as neede
 | `pred_save_path` | Directory to save prediction results |
 | `unfreeze_from_layer` | Layer index from which to unfreeze parameters |
 
-For more parameter descriptions, please refer to `PARAMETER.md`.
+For more parameter descriptions, please refer to [`PARAMETER.md`](PARAMETER.md).
 
 ### :raising_hand: Download Pretrained Models and Vocabularies
 You can download our pre-trained models trained on large-scale genotype data, and vocabularies at Hugging Face. Access [Hugging Face](https://huggingface.co/integer8/PreGP) through the following link.
