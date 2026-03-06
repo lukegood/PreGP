@@ -73,13 +73,13 @@ Here are the meanings of some key parameters, which need to be modified as neede
 For more parameter descriptions, please refer to [`PARAMETER.md`](PARAMETER.md).
 
 ### :raising_hand: Download Pretrained Models and Vocabularies
-You can download our pre-trained models trained on large-scale genotype data, and vocabularies at Hugging Face. Access [Hugging Face :hugs:](https://huggingface.co/integer8/PreGP) through the following link.
+You can download our pretrained models trained on large-scale genotype data and vocabularies at Hugging Face. Access [Hugging Face](https://huggingface.co/integer8/PreGP) :hugs: through the following link.
 ```
 https://huggingface.co/integer8/PreGP
 ```
 - Method 1: Directly download the model and vocabularies through the browser.
 
-Simply click the download button next to the model to download the model weights you need.
+Simply click the download button next to the model to download the model weights and vocabularies you need.
 
 ![sample](pictures/1.png)
 
