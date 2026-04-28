@@ -22,7 +22,7 @@ cd PreGP
 ```
 3. Execute the following command to create the PreGP environment
 ```
-conda env export -n PreGP > pregp_env.yml
+conda create -n PreGP -f pregp_env.yml
 ```
 ### :runner: Pretrain Phase
 1. Activate the PreGP environment. 
